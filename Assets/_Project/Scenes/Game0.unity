@@ -762,6 +762,7 @@ GameObject:
   - component: {fileID: 725688164}
   - component: {fileID: 725688163}
   - component: {fileID: 725688162}
+  - component: {fileID: 725688166}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -869,10 +870,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab63832a3da62f49a4d92f82d311a57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsEnabled: 0
   _moveSpeed: 4
   _rotateSpeed: 2
   _isTankMovement: 0
+  _attackCooldown: 1.2
+  _attackDamage: 10
   _interactRange: 2
+  OnAttack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &725688163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -885,6 +892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 303a6e0f1dc25a245b432b4da6e26ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerInput: {fileID: 725688164}
   Move: {x: 0, y: 0}
   Interact: 0
   Attack: 0
@@ -946,6 +954,27 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &725688166
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725688157}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1474,6 +1503,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _showGizmo: 0
+  _gizmoColor: {r: 0, g: 1, b: 1, a: 1}
 --- !u!65 &1830294040
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2097,6 +2128,8 @@ MonoBehaviour:
   player: {fileID: 725688161}
   moveSpeed: 6
   lerpSpeed: 2
+  initialEnemyPosition: {x: 0, y: 0, z: 0}
+  initialEnemyRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!33 &7434612788714854647
 MeshFilter:
   m_ObjectHideFlags: 0

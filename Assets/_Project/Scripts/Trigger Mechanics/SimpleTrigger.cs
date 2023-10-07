@@ -22,7 +22,6 @@ public class SimpleTrigger : MonoBehaviour
         }
     }
 
-<<<<<<< Updated upstream:Assets/_Project/Scripts/Trigger Mechanics/SimpleTrigger.cs
     private void OnDrawGizmos()
     {
         if (!_showGizmo)
@@ -34,11 +33,12 @@ public class SimpleTrigger : MonoBehaviour
 
         Gizmos.color = _gizmoColor;
         Gizmos.DrawCube(transform.position, collider.bounds.size);
-=======
+    }
+
     private void OnTriggerExit(Collider collision)
     {
         _onTriggerExitEvent?.Invoke();
 
->>>>>>> Stashed changes:Assets/_Project/Scripts/SimpleTrigger.cs
     }
+
 }
