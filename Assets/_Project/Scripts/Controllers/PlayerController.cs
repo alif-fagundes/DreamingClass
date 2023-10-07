@@ -11,6 +11,7 @@ using UnityEngine.InputSystem;
 [DisallowMultipleComponent]
 public class PlayerController : BaseController, ICanActivatePressurePlates, IDoDamage, ITakeDamage
 {
+    public static PlayerController Instance;
 
     [Header("Movement")]
     [SerializeField] private float _moveSpeed;
@@ -38,6 +39,11 @@ public class PlayerController : BaseController, ICanActivatePressurePlates, IDoD
 
     public void Awake()
     {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+
         _input = GetComponent<InputManager>();
         _characterController = GetComponent<CharacterController>();
         _animator = GetComponent<Animator>();
