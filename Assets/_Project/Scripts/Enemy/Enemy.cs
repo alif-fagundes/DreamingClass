@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Enemy : MonoBehaviour
+public class Enemy : BaseController, ITakeDamage, IDoDamage
 {
     public Transform player;
     public float moveSpeed = 5f;
@@ -13,14 +13,32 @@ public class Enemy : MonoBehaviour
     public Vector3 initialEnemyPosition;
     public Quaternion initialEnemyRotation;
 
+    [Header("Combat")]
+    [SerializeField] private int _maxHealth = 30;
+    [SerializeField] private int _damage = 5;
+
+    [Header("Events")]
+    public UnityEvent OnDeath;
+
+    private int _currentHealth;
+    private bool _isDead = false;
+
     private void Start()
     {
         initialEnemyPosition = transform.position;
         initialEnemyRotation = transform.rotation;
+
+        _currentHealth = _maxHealth;
+
+        ToggleEnabled(true);
     }
 
     private void FixedUpdate()
     {
+        if(!IsEnabled) return;
+        if (_isDead) return;
+
+
         if (canChasePlayer)
         {
             Move(player.position);
@@ -40,7 +58,6 @@ public class Enemy : MonoBehaviour
                 canMove = false;
             }
         }
-
     }
 
     public void StartChasePlayer()
@@ -70,7 +87,6 @@ public class Enemy : MonoBehaviour
 
             transform.position = newPosition;
         }
-
     }
 
 
@@ -87,4 +103,26 @@ public class Enemy : MonoBehaviour
 
     }
 
+    public void TakeDamage(int damage)
+    {
+        _currentHealth -= damage;
+
+        if(_currentHealth <= 0)
+        {
+            _currentHealth = 0;
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        ToggleEnabled(false);
+        _isDead = true;
+        OnDeath?.Invoke();
+    }
+
+    public void DoDamage(ITakeDamage other)
+    {
+        throw new System.NotImplementedException();
+    }
 }

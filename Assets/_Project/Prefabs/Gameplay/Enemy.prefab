@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8101315635622156426}
   - component: {fileID: 2524157706426546027}
   - component: {fileID: 8367932373282406730}
+  - component: {fileID: 7919897782339345264}
   m_Layer: 0
   m_Name: EnemyBody
   m_TagString: Enemy
@@ -71,12 +72,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10862cb6e81d24ec1b65418316b356e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsEnabled: 0
   player: {fileID: 0}
   moveSpeed: 6
   lerpSpeed: 2
   canChasePlayer: 0
   initialEnemyPosition: {x: 0, y: 0, z: 0}
   initialEnemyRotation: {x: 0, y: 0, z: 0, w: 0}
+  _maxHealth: 30
+  _damage: 5
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2971563329340798393}
+        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7919897782339345264}
+        m_TargetAssemblyTypeName: PlayAudioSFX, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: c1536fef63debd94eaf7fc0937900e27,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: AudioSFX, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5724718140519492146}
+        m_TargetAssemblyTypeName: DisableAfterDelay, Assembly-CSharp
+        m_MethodName: DelayedDisable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!54 &2524157706426546027
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -103,7 +147,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &8367932373282406730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,12 +162,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _flashColor: {r: 1, g: 1, b: 1, a: 1}
   _flashTime: 0.15
-  _knockbackDistance: 1
-  _knockbackSpeed: 5
-  _controllerToDisable: {fileID: 0}
+  _knockbackDistance: 2
+  _knockbackSpeed: 8
+  _controllerToDisable: {fileID: 8101315635622156426}
   OnHit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7919897782339345264}
+        m_TargetAssemblyTypeName: PlayAudioSFX, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 188e874c45abf724cb545fadeb940ea1,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: AudioSFX, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7919897782339345264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4490952410523153954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03fcd238ee08e19479b403129b76e855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfx: {fileID: 0}
 --- !u!1 &4699428102305291223
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,6 +203,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5853506150058438842}
+  - component: {fileID: 5724718140519492146}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -157,6 +228,19 @@ Transform:
   - {fileID: 4986254536088991215}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &5724718140519492146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4699428102305291223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d361e531f77ce742bfd210e53d6bc8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 1
 --- !u!1 &5970481038593060673
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,8 +430,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5, y: 0.2, z: 4}
-  m_Center: {x: 0, y: 0, z: 2}
+  m_Size: {x: 5.26, y: 0.45833182, z: 6.12}
+  m_Center: {x: 0, y: 0.041130424, z: 2.2999997}
 --- !u!114 &667113813835520758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391,8 +475,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _showGizmo: 0
-  _gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  _showGizmo: 1
+  _gizmoColor: {r: 0.83137256, g: 0.075907454, b: 0.035294104, a: 0.65882355}
 --- !u!1 &8628177164374164691
 GameObject:
   m_ObjectHideFlags: 0

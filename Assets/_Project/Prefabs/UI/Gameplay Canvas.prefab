@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 1688288440720178015}
   - component: {fileID: 4195485756235989553}
   - component: {fileID: 7363235948222224184}
+  - component: {fileID: 1071950681826199849}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -224,6 +225,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 4195485756235989553}
+--- !u!114 &1071950681826199849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2682625430066468050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c0b1666f9724529a0398f420b7866c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 4195485756235989553}
 --- !u!1 &4354703793453500144
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,6 +353,7 @@ GameObject:
   - component: {fileID: 7174502476901287417}
   - component: {fileID: 3441656417908833396}
   - component: {fileID: 6921232311980497579}
+  - component: {fileID: 7978383324102598671}
   m_Layer: 5
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -433,7 +448,33 @@ MonoBehaviour:
   IsPlaying: 0
   OnDialogueStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7978383324102598671}
+        m_TargetAssemblyTypeName: PlayAudioSFX, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: e268e273b63ab2845a73b7cbc9614493,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDialogueEnd:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7978383324102598671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5361637649725780332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03fcd238ee08e19479b403129b76e855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfx: {fileID: 0}

@@ -37,7 +37,7 @@ public class SimpleTrigger : MonoBehaviour
         BoxCollider collider = GetComponent<BoxCollider>();
 
         Gizmos.color = _gizmoColor;
-        Gizmos.DrawCube(transform.position, collider.bounds.size);
+        Gizmos.DrawCube(collider.bounds.center, collider.bounds.size);
     }
 
     private void OnTriggerExit(Collider collision)
