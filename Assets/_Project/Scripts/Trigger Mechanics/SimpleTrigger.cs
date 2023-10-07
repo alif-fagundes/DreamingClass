@@ -6,6 +6,7 @@ public class SimpleTrigger : MonoBehaviour
 {
     [SerializeField] bool _shouldDisableAfterTrigger = false;
     [SerializeField] UnityEvent _onTriggerEnterEvent;
+    [SerializeField] UnityEvent _onTriggerExitEvent;
 
     [Header("Debug")]
     [SerializeField] bool _showGizmo;
@@ -21,6 +22,7 @@ public class SimpleTrigger : MonoBehaviour
         }
     }
 
+<<<<<<< Updated upstream:Assets/_Project/Scripts/Trigger Mechanics/SimpleTrigger.cs
     private void OnDrawGizmos()
     {
         if (!_showGizmo)
@@ -32,5 +34,11 @@ public class SimpleTrigger : MonoBehaviour
 
         Gizmos.color = _gizmoColor;
         Gizmos.DrawCube(transform.position, collider.bounds.size);
+=======
+    private void OnTriggerExit(Collider collision)
+    {
+        _onTriggerExitEvent?.Invoke();
+
+>>>>>>> Stashed changes:Assets/_Project/Scripts/SimpleTrigger.cs
     }
 }
