@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24d8a93e47d5e584a8e86ccf219cf184, type: 3}
-  m_Name: Test_DialogueSequence
+  m_Name: DialogueSequence8
   m_EditorClassIdentifier: 
   dialogue:
-  - text: hi!!!!!!!!!!!!!!!!!!!!
-    delayToStart: 0.5
-    delayToEnd: 1
-  - text: testing dialogue
-    delayToStart: 0.5
-    delayToEnd: 2
+  - text: But at the end of the struggle, to his great surprise,
+    delayToStart: 1
+    delayToEnd: 3
+  - text: He found a sight that brought tears to his eyes.
+    delayToStart: 1
+    delayToEnd: 3
