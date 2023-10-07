@@ -13,7 +13,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] TMP_Text SFXvolumeTextValue = null;
     [SerializeField] Slider SFXvolumeSlider = null;
     [SerializeField] float defaultVolume = 0.5f;
-
+    [SerializeField] VolumeSettings volumeSettings = null;
     [SerializeField] GameObject confirmationPrompt = null;
 
     [Header("Levels To Laod")]
@@ -44,10 +44,19 @@ public class MenuController : MonoBehaviour
         Application.Quit();
     }
 
-    public void SetVolume(float volume)
+    public void SetBGMVolume(float volume)
     {
-        AudioListener.volume = volume;
+        volumeSettings.SetMusicVolume(volume);
+        AudioManager.Instance.SetupVolumes();
+        //AudioListener.volume = volume;
         BGMvolumeTextValue.text = volume.ToString("0.0");
+    }
+
+    public void SetSFXVolume(float volume)
+    {
+        volumeSettings.SetSfxVolume(volume);
+        AudioManager.Instance.SetupVolumes();
+        SFXvolumeTextValue.text = volume.ToString("0.0");
     }
 
     public void VolumeApply()
