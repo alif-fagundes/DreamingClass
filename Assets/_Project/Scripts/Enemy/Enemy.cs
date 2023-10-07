@@ -17,14 +17,12 @@ public class Enemy : MonoBehaviour
     {
         initialEnemyPosition = transform.position;
         initialEnemyRotation = transform.rotation;
-
     }
 
     private void FixedUpdate()
     {
         if (canChasePlayer)
         {
-            print("Perseguir jogador");
             Move(player.position);
             canMove = false;
 
@@ -32,13 +30,12 @@ public class Enemy : MonoBehaviour
         {
             float distancia = Vector3.Distance(transform.position, initialEnemyPosition);
 
-            if (distancia > 0.5f) // Ajuste isso conforme necessário para a margem de erro desejada.
+            if (distancia > 0.5f)
             {
                 Move(initialEnemyPosition);
             }
             else
             {
-                print("Nao pode mover");
                 transform.rotation = initialEnemyRotation;
                 canMove = false;
             }
@@ -65,10 +62,10 @@ public class Enemy : MonoBehaviour
             Vector3 targetPosition = position;
             Vector3 currentPosition = transform.position;
             Vector3 direction = targetPosition - currentPosition;
-            Quaternion rotacaoDesejada = Quaternion.LookRotation(direction);
+            Quaternion desiredRotation = Quaternion.LookRotation(direction);
 
 
-            transform.rotation = Quaternion.Euler(0, rotacaoDesejada.eulerAngles.y, 0);
+            transform.rotation = Quaternion.Euler(0, desiredRotation.eulerAngles.y, 0);
             Vector3 newPosition = Vector3.Lerp(currentPosition, targetPosition, lerpSpeed * Time.fixedDeltaTime);
 
             transform.position = newPosition;
@@ -83,14 +80,10 @@ public class Enemy : MonoBehaviour
 
         IEnumerator WaitingPosition()
         {
-            print("comecar contagem");
             canMove = false;
             yield return new WaitForSeconds(3);
-            print("volta para a casa otario");
             canMove = true;
         }
-
-        
 
     }
 

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2971563329340798393}
   - component: {fileID: 8101315635622156426}
   - component: {fileID: 2524157706426546027}
+  - component: {fileID: 8367932373282406730}
   m_Layer: 0
   m_Name: EnemyBody
   m_TagString: Enemy
@@ -103,6 +104,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8367932373282406730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4490952410523153954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66cf650d04348ab4f88e6187f77886c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flashColor: {r: 1, g: 1, b: 1, a: 1}
+  _flashTime: 0.15
+  _knockbackDistance: 1
+  _knockbackSpeed: 5
+  _controllerToDisable: {fileID: 0}
+  OnHit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4699428102305291223
 GameObject:
   m_ObjectHideFlags: 0
