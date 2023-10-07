@@ -6,17 +6,17 @@ using UnityEngine.Events;
 public class CanTakeHits : MonoBehaviour
 {
     [Header("Flash")]
-    [SerializeField] Color _flashColor = Color.white;
-    [SerializeField] float _flashTime = 0.1f;
+    [SerializeField] private Color _flashColor = Color.white;
+    [SerializeField] private float _flashTime = 0.1f;
 
     [Header("Knockback")]
-    [SerializeField] float _knockbackDistance = 2f;
-    [SerializeField] float _knockbackSpeed = 2f;
-    [SerializeField] BaseController _controllerToDisable;
+    [SerializeField] private float _knockbackDistance = 2f;
+    [SerializeField] private float _knockbackSpeed = 2f;
+    [SerializeField] private BaseController _controllerToDisable;
+    [SerializeField] private LayerMask _wallLayerMask;
 
     [Header("Events")]
     public UnityEvent OnHit;
-
 
     private List<Renderer> _renderes = new List<Renderer>();
     private List<Material> _materials = new List<Material>();
@@ -70,6 +70,16 @@ public class CanTakeHits : MonoBehaviour
         Vector3 startPosition = transform.position;
         Vector3 finalPosition = transform.position + (direction * _knockbackDistance);
         finalPosition.y = transform.position.y;
+
+        if (Physics.Linecast(new Vector3(startPosition.x, startPosition.y + 0.3f, startPosition.z),
+            new Vector3(finalPosition.x, finalPosition.y + 0.3f, finalPosition.z), out RaycastHit hit, _wallLayerMask))
+        {
+            // void knockback pushing the unit into a wall
+
+            direction = transform.position - hit.point;
+            finalPosition = transform.position + (direction * 0.3f);
+            finalPosition.y = transform.position.y;
+        }
 
         float time = 0f;
         while (time < 1f)

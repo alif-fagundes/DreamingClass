@@ -4,7 +4,11 @@ using UnityEngine.Events;
 [RequireComponent(typeof(BoxCollider))]
 public class SimpleTrigger : MonoBehaviour
 {
-    [SerializeField] bool _shouldDisableAfterTrigger = false;
+    [SerializeField] private bool _shouldDisableAfterTrigger = false;
+    [Tooltip("If a string is passed, only objects with this tag will trigger")]
+    [SerializeField] private string _tagRequiredToTrigger = "Player";
+
+    [Header("Events")]
     [SerializeField] UnityEvent _onTriggerEnterEvent;
     [SerializeField] UnityEvent _onTriggerExitEvent;
 
@@ -14,17 +18,18 @@ public class SimpleTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-
-        if (!collision.gameObject.CompareTag("Enemy"))
+        if (_tagRequiredToTrigger != null && !string.IsNullOrEmpty(_tagRequiredToTrigger))
         {
-            _onTriggerEnterEvent?.Invoke();
-
-            if (_shouldDisableAfterTrigger)
-            {
-                gameObject.SetActive(false);
-            }
+            if (!collision.gameObject.CompareTag(_tagRequiredToTrigger)) return;
         }
-       
+
+        _onTriggerEnterEvent?.Invoke();
+
+        if (_shouldDisableAfterTrigger)
+        {
+            gameObject.SetActive(false);
+        }
+
     }
 
     private void OnDrawGizmos()
@@ -42,11 +47,13 @@ public class SimpleTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider collision)
     {
-        if (!collision.gameObject.CompareTag("Enemy"))
+        if (_tagRequiredToTrigger != null && !string.IsNullOrEmpty(_tagRequiredToTrigger))
         {
-            _onTriggerExitEvent?.Invoke();
+            if (!collision.gameObject.CompareTag(_tagRequiredToTrigger)) return;
         }
-            
+
+        _onTriggerExitEvent?.Invoke();
+
     }
 
 }

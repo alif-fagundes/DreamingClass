@@ -9,7 +9,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(InputManager))]
 [RequireComponent(typeof(Animator))]
 [DisallowMultipleComponent]
-public class PlayerController : BaseController, ICanActivatePressurePlates, IDoDamage
+public class PlayerController : BaseController, ICanActivatePressurePlates, IDoDamage, ITakeDamage
 {
 
     [Header("Movement")]
@@ -17,15 +17,15 @@ public class PlayerController : BaseController, ICanActivatePressurePlates, IDoD
     [SerializeField] private float _rotateSpeed;
     [SerializeField] private bool _isTankMovement;
 
-    [Header("Attack")]
+    [Header("Combat")]
+    [SerializeField] private int _maxHealth = 50;
     [SerializeField] private float _attackCooldown = 1.2f;
     [SerializeField] private int _attackDamage = 10;
-
-    [Header("Interaction")]
-    [SerializeField] private float _interactRange;
+    public bool IsDead = false;
 
     [Header("Events")]
     public UnityEvent OnAttack;
+    public UnityEvent OnDeath;
 
     private InputManager _input;
     private CharacterController _characterController;
@@ -33,6 +33,8 @@ public class PlayerController : BaseController, ICanActivatePressurePlates, IDoD
 
     private bool _canAttack = true;
     private Coroutine _attackCooldownCoroutine;
+
+    private int _currentHealth;
 
     public void Awake()
     {
@@ -42,15 +44,19 @@ public class PlayerController : BaseController, ICanActivatePressurePlates, IDoD
 
         ToggleEnabledCallback = ToggleInputs;
 
+        _currentHealth = _maxHealth;
+
         ToggleEnabled(true);
+
     }
 
     public void Update()
     {
         if (!IsEnabled) return;
+        if (IsDead) return;
+
 
         HandleMovement();
-        HandleInteraction();
         HandleAttack();
     }
 
@@ -76,25 +82,6 @@ public class PlayerController : BaseController, ICanActivatePressurePlates, IDoD
         {
             transform.forward = (transform.position + inputDirection) - transform.position;
             _characterController.SimpleMove(inputDirection * _moveSpeed);
-        }
-    }
-
-    private void HandleInteraction()
-    {
-        if (_input.Interact)
-        {
-            Debug.Log("Player interacted");
-            _input.Interact = false;
-
-            //RaycastHit hit;
-            //if (Physics.Raycast(transform.position, transform.forward, out hit, interactionDistance))
-            //{
-            //    Interactable interactable = hit.collider.GetComponent<Interactable>();
-            //    if (interactable != null)
-            //    {
-            //        interactable.Interact();
-            //    }
-            //}
         }
     }
 
@@ -127,11 +114,34 @@ public class PlayerController : BaseController, ICanActivatePressurePlates, IDoD
 
     public void DoDamage(ITakeDamage other)
     {
+        if (IsDead) return;
         other.TakeDamage(_attackDamage);
     }
 
     private void ToggleInputs(bool value)
     {
         _input.ToggleEnabled(value);   
+    }
+
+    public void TakeDamage(int damage)
+    {
+        if (IsDead) return;
+        _currentHealth -= damage;
+
+        if (_currentHealth <= 0)
+        {
+            _currentHealth = 0;
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        if (IsDead) return;
+        ToggleEnabled(false);
+        IsDead = true;
+        OnDeath?.Invoke();
+
+        Debug.Log("GAME OVER!!!!!!!!");
     }
 }
