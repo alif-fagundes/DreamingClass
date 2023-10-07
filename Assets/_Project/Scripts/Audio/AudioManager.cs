@@ -73,8 +73,6 @@ public class AudioManager : MonoBehaviour
             sourceToUse.pitch = pitch;
 
             sourceToUse.Play();
-
-            Debug.Log($"Playing {sourceToUse.gameObject.name}");
         }
         else
         {

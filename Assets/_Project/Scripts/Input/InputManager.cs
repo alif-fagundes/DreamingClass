@@ -1,9 +1,11 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(PlayerInput))]
 public class InputManager : MonoBehaviour
 {
     [Header("Character Input Values")]
+    [SerializeField] PlayerInput _playerInput;
     public Vector2 Move;
     public bool Interact = false;
     public bool Attack = false;
@@ -41,6 +43,10 @@ public class InputManager : MonoBehaviour
         Attack = newState;
     }
 
+    public void ToggleEnabled(bool value)
+    {
+        _playerInput.enabled = value;
+    }
 
     private void OnApplicationFocus(bool hasFocus)
     {

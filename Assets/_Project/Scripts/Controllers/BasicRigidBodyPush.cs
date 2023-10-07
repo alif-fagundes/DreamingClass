@@ -17,9 +17,10 @@ namespace Project
 		{
 			// https://docs.unity3d.com/ScriptReference/CharacterController.OnControllerColliderHit.html
 
-			// make sure we hit a non kinematic rigidbody
 			Rigidbody body = hit.collider.attachedRigidbody;
-			if (body == null || body.isKinematic) return;
+            //// make sure we hit a non kinematic rigidbody
+            //if (body == null || body.isKinematic) return;
+            if (body == null) return;
 
 			// make sure we only push desired layer(s)
 			var bodyLayerMask = 1 << body.gameObject.layer;
