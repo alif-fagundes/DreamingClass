@@ -10,7 +10,6 @@ public class InputManager : MonoBehaviour
 
     [Header("Mouse Cursor Settings")]
     public bool cursorLocked = true;
-    public bool cursorInputForLook = true;
 
     public void OnMove(InputValue value)
     {
