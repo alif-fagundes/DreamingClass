@@ -14,12 +14,17 @@ public class SimpleTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        _onTriggerEnterEvent?.Invoke();
 
-        if (_shouldDisableAfterTrigger)
+        if (!collision.gameObject.CompareTag("Enemy"))
         {
-            gameObject.SetActive(false);    
+            _onTriggerEnterEvent?.Invoke();
+
+            if (_shouldDisableAfterTrigger)
+            {
+                gameObject.SetActive(false);
+            }
         }
+       
     }
 
     private void OnDrawGizmos()
@@ -37,8 +42,11 @@ public class SimpleTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider collision)
     {
-        _onTriggerExitEvent?.Invoke();
-
+        if (!collision.gameObject.CompareTag("Enemy"))
+        {
+            _onTriggerExitEvent?.Invoke();
+        }
+            
     }
 
 }

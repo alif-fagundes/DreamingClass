@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     public Transform player;
     public float moveSpeed = 5f;
     public float lerpSpeed = 1f;
-    private bool canChasePlayer = false;
+    public bool canChasePlayer = false;
     private bool canMove = false;
     public Vector3 initialEnemyPosition;
     public Quaternion initialEnemyRotation;
@@ -24,12 +24,15 @@ public class Enemy : MonoBehaviour
     {
         if (canChasePlayer)
         {
+            print("Perseguir jogador");
             Move(player.position);
             canMove = false;
 
         } else if (canMove)
         {
-            if (transform.position != initialEnemyPosition)
+            float distancia = Vector3.Distance(transform.position, initialEnemyPosition);
+
+            if (distancia > 0.5f) // Ajuste isso conforme necessário para a margem de erro desejada.
             {
                 Move(initialEnemyPosition);
             }
@@ -51,6 +54,7 @@ public class Enemy : MonoBehaviour
     public void StopChasePlayer()
     {
         canChasePlayer = false;
+        canMove = true;
         BackToPosition();
     }
 
@@ -67,7 +71,6 @@ public class Enemy : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, rotacaoDesejada.eulerAngles.y, 0);
             Vector3 newPosition = Vector3.Lerp(currentPosition, targetPosition, lerpSpeed * Time.fixedDeltaTime);
 
-            // Defina a nova posição do inimigo.
             transform.position = newPosition;
         }
 
@@ -80,7 +83,10 @@ public class Enemy : MonoBehaviour
 
         IEnumerator WaitingPosition()
         {
+            print("comecar contagem");
+            canMove = false;
             yield return new WaitForSeconds(3);
+            print("volta para a casa otario");
             canMove = true;
         }
 
