@@ -8,11 +8,6 @@ public class WobblyText : MonoBehaviour
 
     public TMP_Text textComponent;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         textComponent.ForceMeshUpdate();
