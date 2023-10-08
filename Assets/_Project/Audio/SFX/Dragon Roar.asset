@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24a70baf34a8fba4fa30e3ccf5a3cb87, type: 3}
-  m_Name: HeroAttack_SFX
+  m_Name: Dragon Roar
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: b1a8aa9aa30a5c9489254cbc8b2af365, type: 3}
-  - {fileID: 8300000, guid: 800fa3cbf14c7324b9f82a04e14355f2, type: 3}
-  - {fileID: 8300000, guid: 1bcd1e9e019445d4ba92b07ac5681905, type: 3}
-  volume: 0.5
-  pitchVariation: {x: 1, y: 1}
+  - {fileID: 8300000, guid: 0b45baa42aaae4799ba51d6809d38d46, type: 3}
+  - {fileID: 8300000, guid: 4115aa72b75f64911b7bb345fa7da2dd, type: 3}
+  - {fileID: 8300000, guid: 5fad3d84c62784e679a3bbb3d265d341, type: 3}
+  volume: 0.8
+  pitchVariation: {x: 1, y: 1.1}
