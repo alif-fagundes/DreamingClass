@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogue:
   - text: In flames and fury, the battle did unfold,
     delayToStart: 1
-    delayToEnd: 3
+    delayToEnd: 5
   - text: The knight did not retreat, his valor was bold.
     delayToStart: 1
-    delayToEnd: 3
+    delayToEnd: 5

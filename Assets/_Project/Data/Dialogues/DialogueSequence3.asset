@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogue:
   - text: A dragon, living legend, in stories grand,
     delayToStart: 1
-    delayToEnd: 3
+    delayToEnd: 5
   - text: A challenge to his name, across the land.
     delayToStart: 1
-    delayToEnd: 3
+    delayToEnd: 5

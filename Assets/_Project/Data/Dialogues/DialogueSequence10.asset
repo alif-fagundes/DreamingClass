@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogue:
   - text: The knight, in shame, hung his head low,
     delayToStart: 1
-    delayToEnd: 4
+    delayToEnd: 5
   - text: His fame now a source of great sorrow.
     delayToStart: 1
-    delayToEnd: 5
+    delayToEnd: 10

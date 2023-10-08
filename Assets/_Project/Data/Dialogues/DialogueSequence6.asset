@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogue:
   - text: The knight advanced with a shout, his heart full of fire,
     delayToStart: 1
-    delayToEnd: 3
+    delayToEnd: 5
   - text: Vowing in this battle, his worth would aspire.
     delayToStart: 1
-    delayToEnd: 3
+    delayToEnd: 5

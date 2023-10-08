@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogue:
   - text: No dragon, but a simple hen stood there,
     delayToStart: 1
-    delayToEnd: 3
+    delayToEnd: 5
   - text: Pecking at the ground, without a single care.
     delayToStart: 1
-    delayToEnd: 3
+    delayToEnd: 5

@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogue:
   - text: With lance in hand and resolute soul ablaze,
     delayToStart: 1
-    delayToEnd: 3
+    delayToEnd: 5
   - text: He set off toward the dragon, through daring maze.
     delayToStart: 1
-    delayToEnd: 3
+    delayToEnd: 5
