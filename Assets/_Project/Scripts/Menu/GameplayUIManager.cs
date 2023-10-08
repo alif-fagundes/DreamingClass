@@ -22,6 +22,8 @@ public class GameplayUIManager : MonoBehaviour
         EndingPage = 5,
     }
 
+    public static GameplayUIManager Instance;
+
     [SerializeField] private GameplayUIPages _startsWith = GameplayUIPages.None;
     [SerializeField] private CanvasGroup _background;
     public UIPage<GameplayUIPages>[] _pages;
@@ -32,6 +34,11 @@ public class GameplayUIManager : MonoBehaviour
 
     private void Awake()
     {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+
         _input = FindAnyObjectByType<InputManager>();
 
         if(_input == null)
@@ -63,21 +70,27 @@ public class GameplayUIManager : MonoBehaviour
         }
     }
 
-    public void Resume()
+    public void NextLevelButton()
+    {
+        GameManager.Instance.LoadNextLevel();
+    }
+
+    public void ResumeButton()
     {
         CloseActivePage();
     }
 
-    public void Quit()
+    public void QuitButton()
     {
         GameManager.Instance.QuitGame();
     }
 
-    public void MainMenu()
+    public void MainMenuButton()
     {
         GameManager.Instance.LoadMainMenu();
     }
 
+    #region Page Stuff
     public void OpenPage(int page)
     {
         // open page based on enum value
@@ -90,8 +103,6 @@ public class GameplayUIManager : MonoBehaviour
         {
             CloseActivePage();
         }
-
-        Debug.Log("Aqui");
 
         foreach (var p in _pages)
         {
@@ -137,7 +148,6 @@ public class GameplayUIManager : MonoBehaviour
         }
     }
 
-
     private void ToggleBackground(bool value)
     {
         // TODO: animate smoothly the alpha to fade in/out 
@@ -154,5 +164,5 @@ public class GameplayUIManager : MonoBehaviour
             _background.interactable = false;
         }
     }
-
+    #endregion Page Stuff
 }
