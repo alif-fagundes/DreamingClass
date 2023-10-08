@@ -435,8 +435,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1521771808}
-  - {fileID: 1688724489}
   - {fileID: 1214548649}
+  - {fileID: 1688724489}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &410087039
@@ -2213,7 +2213,7 @@ PrefabInstance:
     - target: {fileID: 4078314384759308947, guid: dd9ef1950cc3b4f1b9fffb720c06b56d,
         type: 3}
       propertyPath: _newGameLevel
-      value: 
+      value: SampleScene
       objectReference: {fileID: 0}
     - target: {fileID: 4078314384759308947, guid: dd9ef1950cc3b4f1b9fffb720c06b56d,
         type: 3}
@@ -3754,12 +3754,32 @@ PrefabInstance:
     - target: {fileID: 2781846291463331259, guid: 3df68ce9e98ac43589f9b72602e60222,
         type: 3}
       propertyPath: m_Name
-      value: PauseCanvas
+      value: InteractionUICanvas
       objectReference: {fileID: 0}
     - target: {fileID: 2781846291463331259, guid: 3df68ce9e98ac43589f9b72602e60222,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3317829897291387139, guid: 3df68ce9e98ac43589f9b72602e60222,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1435240678}
+    - target: {fileID: 3317829897291387139, guid: 3df68ce9e98ac43589f9b72602e60222,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: NewGameDialogYes
+      objectReference: {fileID: 0}
+    - target: {fileID: 3317829897291387139, guid: 3df68ce9e98ac43589f9b72602e60222,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MenuController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3317829897291387139, guid: 3df68ce9e98ac43589f9b72602e60222,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4897040127763399441, guid: 3df68ce9e98ac43589f9b72602e60222,
         type: 3}
@@ -3864,6 +3884,16 @@ PrefabInstance:
     - target: {fileID: 5433743882892172638, guid: 3df68ce9e98ac43589f9b72602e60222,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5957820985223020623, guid: 3df68ce9e98ac43589f9b72602e60222,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7494373479713320748, guid: 3df68ce9e98ac43589f9b72602e60222,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7986873445028737940, guid: 3df68ce9e98ac43589f9b72602e60222,
