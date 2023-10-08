@@ -205,7 +205,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _availableBGM.Array.data[0].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 75d0b62eed2a84bef83e499599946585, type: 3}
+      objectReference: {fileID: 8300000, guid: 57feae93399604a84b4c2ef33bf5ca49, type: 3}
     - target: {fileID: 4030914877777057381, guid: 2429f3c78d98d6b49882fa124dfc8e5c,
         type: 3}
       propertyPath: _availableBGM.Array.data[0].name
