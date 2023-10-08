@@ -2217,6 +2217,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4078314384759308947, guid: dd9ef1950cc3b4f1b9fffb720c06b56d,
         type: 3}
+      propertyPath: defaultVolume
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078314384759308947, guid: dd9ef1950cc3b4f1b9fffb720c06b56d,
+        type: 3}
       propertyPath: volumeSettings
       value: 
       objectReference: {fileID: 7819182121685012359}
@@ -3192,7 +3197,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4170961436415540267}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.43318874, y: -0.000000015508167, z: 0.00000000745361, w: 0.90130323}
+  m_LocalRotation: {x: 0.43318874, y: 0.000000015508165, z: -0.00000000745361, w: 0.90130323}
   m_LocalPosition: {x: -20.76, y: 10, z: -15.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3743,6 +3748,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 515878087610662781, guid: 3df68ce9e98ac43589f9b72602e60222,
         type: 3}
+      propertyPath: m_Value
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 515878087610662781, guid: 3df68ce9e98ac43589f9b72602e60222,
+        type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1435240678}
@@ -3901,6 +3911,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1435240678}
+    - target: {fileID: 8509344182154178801, guid: 3df68ce9e98ac43589f9b72602e60222,
+        type: 3}
+      propertyPath: m_Value
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 8509344182154178801, guid: 3df68ce9e98ac43589f9b72602e60222,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -4088,12 +4103,17 @@ PrefabInstance:
     - target: {fileID: 4030914877777057381, guid: 2429f3c78d98d6b49882fa124dfc8e5c,
         type: 3}
       propertyPath: BGMVolume
-      value: 0.5
+      value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 4030914877777057381, guid: 2429f3c78d98d6b49882fa124dfc8e5c,
         type: 3}
       propertyPath: SFXVolume
-      value: 0.5
+      value: -17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030914877777057381, guid: 2429f3c78d98d6b49882fa124dfc8e5c,
+        type: 3}
+      propertyPath: _shouldDebug
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5607144301736518902, guid: 2429f3c78d98d6b49882fa124dfc8e5c,
         type: 3}
@@ -4220,7 +4240,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6114396247000442996}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.43318874, y: -0.000000015508167, z: 0.00000000745361, w: 0.90130323}
+  m_LocalRotation: {x: 0.43318874, y: 0.000000015508165, z: -0.00000000745361, w: 0.90130323}
   m_LocalPosition: {x: -20.76, y: 10, z: -15.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
