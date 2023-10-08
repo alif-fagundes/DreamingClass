@@ -26,7 +26,8 @@ public class TurretProjectile : MonoBehaviour
 
     private void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, _startingPosition + (transform.forward * 20f), Time.deltaTime * _speed);
+        transform.position = Vector3.MoveTowards(transform.position, _startingPosition + (transform.forward * 50f), Time.deltaTime * _speed);
+        // TODO: atm projectiles are destroyed only if they colide with something, if there's open level this could be a problem in performance
     }
 
     private void OnTriggerEnter(Collider other)

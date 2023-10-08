@@ -9,48 +9,54 @@ public class VolumeSettings : MonoBehaviour
     [SerializeField] Slider musicSlider;
     [SerializeField] Slider SfxSlider;
 
-    private void Start()
-    {
-        GetMusicVolume();
-        GetSfxVolume();
-    }
+        /*
+        private void Start()
+        {
+            GetMusicVolume();
+            GetSfxVolume();
+        }
+        */
 
-    public void SetMusicVolume(float volume)
-    {
-        float _volume = (volume * (2 + 80)) - 80;
-        //audioMixer.SetFloat("MusicVolume", _volume);
+        public void SetMusicVolume(float volume)
+        {
+            float _volume;
+            if (volume == 0) _volume = -80;
+            else _volume = Mathf.Log10(volume) * 20;
 
-        AudioManager.Instance.BGMVolume = _volume;
-        AudioManager.Instance.SetupVolumes();
-    }
+            audioMixer.SetFloat("MusicVolume", _volume);
+            AudioManager.Instance.BGMVolume = _volume;
+        }
 
-    public void SetSfxVolume(float volume)
-    {
-        float _volume = (volume * (2 + 80)) - 80;
-        //audioMixer.SetFloat("SfxVolume", _volume);
-        AudioManager.Instance.SFXVolume = _volume;
-        AudioManager.Instance.SetupVolumes();
-    }
+        public void SetSfxVolume(float volume)
+        {
+            float _volume;
+            if (volume == 0) _volume = -80;
+            else _volume = Mathf.Log10(volume) * 20;
+            //float _volume = (volume * (1 + 80)) - 80;
 
-    public void SetVolumeMaster(float volume)
-    {
-        SetMusicVolume(volume);
-        SetSfxVolume(volume);
-    }
+            audioMixer.SetFloat("SfxVolume", _volume);
+            AudioManager.Instance.SFXVolume = _volume;
+        }
 
-    public void GetMusicVolume()
-    {
-        musicSlider.value = AudioManager.Instance.BGMVolume;
-        float volume = musicSlider.value;
-        //audioMixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20);
-    }
+        public void SetVolumeMaster(float volume)
+        {
+            SetMusicVolume(volume);
+            SetSfxVolume(volume);
+        }
 
-    public void GetSfxVolume()
-    {
-        SfxSlider.value = AudioManager.Instance.SFXVolume;
-        float volume = SfxSlider.value;
-        //audioMixer.SetFloat("SfxVolume", Mathf.Log10(volume) * 20);
-    }
+        public void GetMusicVolume()
+        {
+            musicSlider.value = AudioManager.Instance.BGMVolume;
+            float volume = musicSlider.value;
+            audioMixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20);
+        }
+
+        public void GetSfxVolume()
+        {
+            SfxSlider.value = AudioManager.Instance.SFXVolume;
+            float volume = SfxSlider.value;
+            audioMixer.SetFloat("SfxVolume", Mathf.Log10(volume) * 20);
+        }
 
 }
 

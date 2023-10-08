@@ -84,6 +84,13 @@ public class LevelManager : MonoBehaviour
     {
         AudioManager.Instance.StopCurrentBGM();
         PlayerController.Instance.ToggleEnabled(false);
+        // only toggling of the enabled state of the player is not enough to avoid cases in player takes damage right after level is completed
+        // so gonna disable the entire component for now
+        // TODO: find a better way
+        PlayerController.Instance.GetComponent<CanTakeHits>().enabled = false;
+
+
+        GameplayUIManager.Instance.OpenPage(GameplayUIManager.GameplayUIPages.LevelCompletePage);
 
         OnLevelCompleted?.Invoke();
     }
@@ -93,9 +100,16 @@ public class LevelManager : MonoBehaviour
         AudioManager.Instance.StopCurrentBGM();
         PlayerController.Instance.ToggleEnabled(false);
 
-        // TODO: turn on game over screen
+        GameplayUIManager.Instance.OpenPage(GameplayUIManager.GameplayUIPages.DeathPage);
 
         OnLevelFailed?.Invoke();
+    }
+
+    public void PlayGameEnding()
+    {
+        GameplayUIManager.Instance.OpenPage(GameplayUIManager.GameplayUIPages.EndingPage);
+
+        // TODO: maybe play a timeline at the end?
     }
 
     public LevelKey GetLevelKey(string keyName)
