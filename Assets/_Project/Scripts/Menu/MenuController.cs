@@ -10,7 +10,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] Slider BGMvolumeSlider = null;
     [SerializeField] TMP_Text SFXvolumeTextValue = null;
     [SerializeField] Slider SFXvolumeSlider = null;
-    [SerializeField] float defaultVolume = 0.7f;
+    [SerializeField] float defaultVolume = 0.9f;
     [SerializeField] VolumeSettings volumeSettings = null;
     [SerializeField] GameObject confirmationPrompt = null;
     [SerializeField] GameObject noSavedGameDialog = null;

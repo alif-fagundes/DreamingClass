@@ -14,11 +14,14 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance;
 
+    [SerializeField] private bool _startLevelOnAwake = true;
+    [SerializeField] private bool _shouldSetupPlayer = true;
+    [SerializeField] private Transform _playerStartPosition;
+
+    [Header("Level BGM")]
     [SerializeField] private float _delayToStartBgm = 3f;
     [SerializeField] private string _bgmName = "gameplay";
 
-    [SerializeField] private bool _startLevelOnAwake = true;
-    [SerializeField] private Transform _playerStartPosition;
 
     [Header("Level State")]
     public List<LevelKey> LevelKeys = new List<LevelKey>();
@@ -53,9 +56,19 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    public void SetupPlayer()
+    {
+        PlayerController.Instance.gameObject.transform.position = _playerStartPosition.position;
+        PlayerController.Instance.gameObject.SetActive(true);
+        PlayerController.Instance.ToggleEnabled(true);
+    }
+
     public void StartLevel()
     {
-        PlayerController.Instance.ToggleEnabled(true);
+        if(_shouldSetupPlayer)
+        {
+            SetupPlayer();
+        }
 
         Invoke("StartLevelBGM", _delayToStartBgm);
 

@@ -77,7 +77,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c740df94aacda34cab9a74ff3728077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _delayToStartBgm: 2
+  _bgmName: gameplay
   _startLevelOnAwake: 1
+  _shoulSetupPlayer: 1
   _playerStartPosition: {fileID: 3930085389755402898}
   LevelKeys: []
   OnLevelStarts:

@@ -1100,7 +1100,6 @@ MonoBehaviour:
   - {fileID: 5867552453311640469}
   - {fileID: 5144900550922018059}
   - {fileID: 5079101616423812926}
-  _testSFX: {fileID: 11400000, guid: e4c8086ba4b366c4fa0d242e0c95c6be, type: 2}
   _BGMSource: {fileID: 3781022983886400024}
   _playOnStart: 0
   _availableBGM:
@@ -1113,9 +1112,10 @@ MonoBehaviour:
     loop: 1
     volume: 0.8
   mixer: {fileID: 24100000, guid: 87dd506878cddb34e971c3598505bfae, type: 2}
-  BGMVolume: 0.8
-  SFXVolume: 0.8
+  BGMVolume: 1.1
+  SFXVolume: 1.1
   _shouldDebug: 0
+  _testSFX: {fileID: 11400000, guid: e4c8086ba4b366c4fa0d242e0c95c6be, type: 2}
 --- !u!82 &3781022983886400024
 AudioSource:
   m_ObjectHideFlags: 0

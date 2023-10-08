@@ -60,7 +60,7 @@ public class CanTakeHits : MonoBehaviour
 
     private IEnumerator HandleKnockback(Vector3 originPosition)
     {
-        if (_controllerToDisable != null)
+        if (_controllerToDisable != null && _controllerToDisable.IsEnabled)
         {
             _controllerToDisable.ToggleEnabled(false);
         }
