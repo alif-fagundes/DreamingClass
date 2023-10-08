@@ -7,6 +7,12 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public enum EGameState
+    {
+        Playing,
+        Paused
+    }
+
     public static GameManager Instance;
 
     public string MainMenuScene = "MainMenu";
@@ -18,7 +24,9 @@ public class GameManager : MonoBehaviour
     public UnityEvent OnLevelLoadingStarts;
     public UnityEvent OnLevelLoadingFinish;
 
-    public const string  LAST_LEVEL_SAVE_KEY = "LAST_LEVEL";
+    public const string LAST_LEVEL_SAVE_KEY = "LAST_LEVEL";
+
+    public EGameState GameState;
 
     private void Awake()
     {
@@ -31,6 +39,32 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        GameState = EGameState.Playing;
+    }
+
+    public void PauseGame()
+    {
+        if (GameState == EGameState.Paused) return;
+
+        GameState = EGameState.Paused;
+        Time.timeScale = 0f;
+    }
+
+    public void ResumeGame()
+    {
+        if (GameState == EGameState.Playing) return;
+
+        GameState = EGameState.Playing;
+        Time.timeScale = 1f;
+    }
+
+    public void QuitGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+        Application.Quit();
     }
 
     public void LoadGameSavedLevel()

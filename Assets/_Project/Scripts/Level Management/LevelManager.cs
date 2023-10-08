@@ -6,18 +6,22 @@ using UnityEngine.Events;
 [System.Serializable]
 public class LevelKey
 {
-    public string keyName;
-    public bool state;
+    public string KeyName;
+    public bool Enabled;
 }
 
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance;
 
+    [SerializeField] private float _delayToStartBgm = 3f;
+    [SerializeField] private string _bgmName = "gameplay";
+
     [SerializeField] private bool _startLevelOnAwake = true;
+    [SerializeField] private Transform _playerStartPosition;
 
     [Header("Level State")]
-    public LevelKey[] LevelKeys;
+    public List<LevelKey> LevelKeys = new List<LevelKey>();
 
     [Header("Events")]
     public UnityEvent OnLevelStarts;
@@ -33,7 +37,7 @@ public class LevelManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
         }
@@ -41,42 +45,53 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        if(_startLevelOnAwake)
+        PlayerController.Instance.OnDeath.AddListener(LevelFailed);
+
+        if (_startLevelOnAwake)
         {
             StartLevel();
         }
-
-        PlayerController.Instance.OnDeath.AddListener(LevelFailed);
     }
 
     public void StartLevel()
     {
+        PlayerController.Instance.ToggleEnabled(true);
 
+        Invoke("StartLevelBGM", _delayToStartBgm);
 
         OnLevelStarts?.Invoke();
     }
 
+    public void StartLevelBGM()
+    {
+        AudioManager.Instance.PlayBGM(_bgmName);
+    }
+
     public void CompleteLevel()
     {
-
+        AudioManager.Instance.StopCurrentBGM();
+        PlayerController.Instance.ToggleEnabled(false);
 
         OnLevelCompleted?.Invoke();
     }
 
     public void LevelFailed()
     {
+        AudioManager.Instance.StopCurrentBGM();
+        PlayerController.Instance.ToggleEnabled(false);
 
+        // TODO: turn on game over screen
 
         OnLevelFailed?.Invoke();
     }
 
-    public LevelKey CheckLevelKey(string keyName)
+    public LevelKey GetLevelKey(string keyName)
     {
         LevelKey key = null;
 
-        foreach(var k in LevelKeys)
+        foreach (var k in LevelKeys)
         {
-            if(k.keyName == keyName)
+            if (k.KeyName == keyName)
             {
                 key = k;
                 break;
@@ -86,7 +101,25 @@ public class LevelManager : MonoBehaviour
         return key;
     }
 
-    public void LevelStateUpdate()
+    public LevelKey SetLevelKey(string keyName, bool state)
+    {
+        var key = GetLevelKey(keyName);
+
+        if (key == null)
+        {
+            LevelKeys.Add(new LevelKey() { KeyName = keyName, Enabled = state });
+        }
+        else
+        {
+            key.Enabled = state;
+        }
+
+        OnLevelKeysUpdated?.Invoke();
+
+        return key;
+    }
+
+    public void LevelStateUpdated()
     {
         OnLevelStateUpdated?.Invoke();
     }

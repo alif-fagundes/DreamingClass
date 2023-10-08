@@ -15,6 +15,11 @@ public class MenuController : MonoBehaviour
     [SerializeField] GameObject confirmationPrompt = null;
     [SerializeField] GameObject noSavedGameDialog = null;
 
+    private void Start()
+    {
+        AudioManager.Instance.PlayBGM("mainMenu");
+    }
+
     public void NewGameDialogYes()
     {
         GameManager.Instance.LoadNewGame();
@@ -34,13 +39,13 @@ public class MenuController : MonoBehaviour
 
     public void ExitButton()
     {
-        Application.Quit();
+        GameManager.Instance.QuitGame();
     }
 
     public void SetBGMVolume(float volume)
     {
         volumeSettings.SetMusicVolume(volume);
-        AudioManager.Instance.SetupVolumes();
+        //AudioManager.Instance.SetupVolumes();
         //AudioListener.volume = volume;
         BGMvolumeTextValue.text = volume.ToString("0.0");
     }
@@ -48,7 +53,7 @@ public class MenuController : MonoBehaviour
     public void SetSFXVolume(float volume)
     {
         volumeSettings.SetSfxVolume(volume);
-        AudioManager.Instance.SetupVolumes();
+        //AudioManager.Instance.SetupVolumes();
         SFXvolumeTextValue.text = volume.ToString("0.0");
     }
 

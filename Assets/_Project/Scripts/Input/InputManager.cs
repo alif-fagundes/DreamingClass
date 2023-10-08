@@ -7,8 +7,8 @@ public class InputManager : MonoBehaviour
     [Header("Character Input Values")]
     [SerializeField] PlayerInput _playerInput;
     public Vector2 Move;
-    public bool Interact = false;
     public bool Attack = false;
+    public bool Pause = false;
 
     [Header("Mouse Cursor Settings")]
     public bool cursorLocked = true;
@@ -18,14 +18,13 @@ public class InputManager : MonoBehaviour
         MoveInput(value.Get<Vector2>());
     }
 
-    public void OnInteract(InputValue value)
-    {
-        InteractInput(value.isPressed);
-    }
-
     public void OnAttack(InputValue value)
     {
         AttackInput(value.isPressed);
+    }
+    public void OnPause(InputValue value)
+    {
+        PauseInput(value.isPressed);
     }
 
     public void MoveInput(Vector2 newState)
@@ -33,9 +32,9 @@ public class InputManager : MonoBehaviour
         Move = newState;
     }
 
-    public void InteractInput(bool newState)
+    public void PauseInput(bool newState)
     {
-        Interact = newState;
+        Pause = newState;
     }
 
     public void AttackInput(bool newState)

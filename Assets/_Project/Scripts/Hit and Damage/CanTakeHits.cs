@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class CanTakeHits : MonoBehaviour
 {
     [Header("Flash")]
-    [SerializeField] private Color _flashColor = Color.white;
+    [ColorUsageAttribute(false, true), SerializeField] private Color _flashColor = Color.white;
     [SerializeField] private float _flashTime = 0.1f;
 
     [Header("Knockback")]
@@ -104,7 +104,7 @@ public class CanTakeHits : MonoBehaviour
             foreach (var _rMaterial in _r.materials)
             {
                 _materials.Add(_rMaterial);
-                _originalColors.Add(_rMaterial.color);
+                _originalColors.Add(_rMaterial.GetColor("_EmissionColor"));
             }
         }
 
@@ -112,9 +112,9 @@ public class CanTakeHits : MonoBehaviour
 
     private void Flash()
     {
-        foreach (var _m in _materials)
+        foreach (var m in _materials)
         {
-            _m.color = _flashColor;
+            m.SetColor("_EmissionColor", _flashColor);
         }
 
         if (_resetColorsCoroutine != null)
@@ -131,7 +131,7 @@ public class CanTakeHits : MonoBehaviour
 
         for (int i = 0; i < _materials.Count; i++)
         {
-            _materials[i].color = _originalColors[i];
+            _materials[i].SetColor("_EmissionColor", _originalColors[i]);
         }
     }
 }

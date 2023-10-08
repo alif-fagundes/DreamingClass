@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7747673511306688071}
   - component: {fileID: 2528969237869592567}
   - component: {fileID: 3386569765370747284}
+  - component: {fileID: 1692227719708014425}
   - component: {fileID: 2764829495672083004}
   m_Layer: 0
   m_Name: PressurePlate
@@ -112,6 +113,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1692227719708014425}
+        m_TargetAssemblyTypeName: LevelKeyUpdater, Project
+        m_MethodName: EnableKey
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnReleased:
     m_PersistentCalls:
       m_Calls:
@@ -128,6 +141,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1692227719708014425}
+        m_TargetAssemblyTypeName: LevelKeyUpdater, Project
+        m_MethodName: DisableKey
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1692227719708014425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2548828006047356850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe276d29a4c05494ca50ce19efdf2606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyName: 
 --- !u!114 &2764829495672083004
 MonoBehaviour:
   m_ObjectHideFlags: 0

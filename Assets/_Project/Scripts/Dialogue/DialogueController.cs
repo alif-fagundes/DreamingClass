@@ -16,7 +16,7 @@ public class DialogueController : MonoBehaviour
     public UnityEvent OnDialogueStart;
     public UnityEvent OnDialogueEnd;
 
-    private DialogueSequenceSO currentSequence;
+    public DialogueSequenceSO CurrentSequence;
     private int conversationIndex = 0;
 
     private UnityEvent _onSequenceEnd;
@@ -33,7 +33,7 @@ public class DialogueController : MonoBehaviour
     public void PlaySequence(DialogueSequenceSO sequence, UnityEvent onSequenceEnd = null)
     {
         conversationIndex = 0;
-        currentSequence = sequence;
+        CurrentSequence = sequence;
         IsPlaying = true;
         _onSequenceEnd = onSequenceEnd;
         StartCoroutine(HandleDialogueStart());
@@ -41,7 +41,7 @@ public class DialogueController : MonoBehaviour
 
     public IEnumerator HandleDialogueStart()
     {
-        yield return new WaitForSeconds(currentSequence.dialogue[conversationIndex].delayToStart);
+        yield return new WaitForSeconds(CurrentSequence.dialogue[conversationIndex].delayToStart);
 
         SetupContent();
         dialoguePanel.alpha = 1;
@@ -59,11 +59,11 @@ public class DialogueController : MonoBehaviour
 
     private IEnumerator HandleDialogueEnd()
     {
-        yield return new WaitForSeconds(currentSequence.dialogue[conversationIndex].delayToEnd);
+        yield return new WaitForSeconds(CurrentSequence.dialogue[conversationIndex].delayToEnd);
         dialoguePanel.alpha = 0;
         conversationIndex++;
 
-        if (conversationIndex >= currentSequence.dialogue.Length)
+        if (conversationIndex >= CurrentSequence.dialogue.Length)
         {
             End();
         }
@@ -77,6 +77,6 @@ public class DialogueController : MonoBehaviour
 
     private void SetupContent()
     {
-        text.text = currentSequence.dialogue[conversationIndex].text;
+        text.text = CurrentSequence.dialogue[conversationIndex].text;
     }
 }

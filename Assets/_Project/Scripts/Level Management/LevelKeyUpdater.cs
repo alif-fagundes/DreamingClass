@@ -1,18 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelKeyUpdater : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private string keyName;
+
+    public void EnableKey()
     {
-        
+        LevelManager.Instance.SetLevelKey(keyName, true);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DisableKey()
     {
-        
+        LevelManager.Instance.SetLevelKey(keyName, false);
     }
 }
