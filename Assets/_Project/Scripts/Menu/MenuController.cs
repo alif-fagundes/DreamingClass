@@ -10,15 +10,20 @@ public class MenuController : MonoBehaviour
     [SerializeField] Slider BGMvolumeSlider = null;
     [SerializeField] TMP_Text SFXvolumeTextValue = null;
     [SerializeField] Slider SFXvolumeSlider = null;
-    [SerializeField] float defaultVolume = 0.9f;
+    [SerializeField] float defaultVolume = 0.8f;
     [SerializeField] VolumeSettings volumeSettings = null;
     [SerializeField] GameObject confirmationPrompt = null;
     [SerializeField] GameObject noSavedGameDialog = null;
+
+
+    /*
 
     private void Start()
     {
         AudioManager.Instance.PlayBGM("mainMenu");
     }
+
+    */
 
     public void NewGameDialogYes()
     {
@@ -45,7 +50,7 @@ public class MenuController : MonoBehaviour
     public void SetBGMVolume(float volume)
     {
         volumeSettings.SetMusicVolume(volume);
-        //AudioManager.Instance.SetupVolumes();
+        AudioManager.Instance.SetupVolumes();
         //AudioListener.volume = volume;
         BGMvolumeTextValue.text = volume.ToString("0.0");
     }
@@ -53,7 +58,7 @@ public class MenuController : MonoBehaviour
     public void SetSFXVolume(float volume)
     {
         volumeSettings.SetSfxVolume(volume);
-        //AudioManager.Instance.SetupVolumes();
+        AudioManager.Instance.SetupVolumes();
         SFXvolumeTextValue.text = volume.ToString("0.0");
     }
 

@@ -183,6 +183,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4030914877777057381, guid: 2429f3c78d98d6b49882fa124dfc8e5c,
         type: 3}
+      propertyPath: BGMVolume
+      value: -17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030914877777057381, guid: 2429f3c78d98d6b49882fa124dfc8e5c,
+        type: 3}
+      propertyPath: SFXVolume
+      value: -17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030914877777057381, guid: 2429f3c78d98d6b49882fa124dfc8e5c,
+        type: 3}
+      propertyPath: _playOnStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030914877777057381, guid: 2429f3c78d98d6b49882fa124dfc8e5c,
+        type: 3}
+      propertyPath: _availableBGM.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030914877777057381, guid: 2429f3c78d98d6b49882fa124dfc8e5c,
+        type: 3}
       propertyPath: _availableBGM.Array.data[0].clip
       value: 
       objectReference: {fileID: 8300000, guid: 75d0b62eed2a84bef83e499599946585, type: 3}
@@ -194,7 +214,7 @@ PrefabInstance:
     - target: {fileID: 4030914877777057381, guid: 2429f3c78d98d6b49882fa124dfc8e5c,
         type: 3}
       propertyPath: _availableBGM.Array.data[0].volume
-      value: 0.6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5607144301736518902, guid: 2429f3c78d98d6b49882fa124dfc8e5c,
         type: 3}
@@ -640,6 +660,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4078314384759308947, guid: dd9ef1950cc3b4f1b9fffb720c06b56d,
         type: 3}
+      propertyPath: defaultVolume
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078314384759308947, guid: dd9ef1950cc3b4f1b9fffb720c06b56d,
+        type: 3}
       propertyPath: volumeSettings
       value: 
       objectReference: {fileID: 2038668705}
@@ -901,10 +926,20 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: AudioSFX, Project
       objectReference: {fileID: 0}
+    - target: {fileID: 1002366489085367492, guid: f5a964aa0f7404a5daf40fe5dff18437,
+        type: 3}
+      propertyPath: m_text
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 1338796159944961357, guid: f5a964aa0f7404a5daf40fe5dff18437,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653048598344621893, guid: f5a964aa0f7404a5daf40fe5dff18437,
+        type: 3}
+      propertyPath: m_text
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 1773130324820837031, guid: f5a964aa0f7404a5daf40fe5dff18437,
         type: 3}
