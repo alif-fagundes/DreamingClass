@@ -17,14 +17,21 @@ using UnityEngine.UI;
 
         public void SetMusicVolume(float volume)
         {
-            float _volume = (volume * (1 + 80)) - 80;
+            float _volume;
+            if (volume == 0) _volume = -80;
+            else _volume = Mathf.Log10(volume) * 20;
+
             audioMixer.SetFloat("MusicVolume", _volume);
             AudioManager.Instance.BGMVolume = _volume;
         }
 
         public void SetSfxVolume(float volume)
         {
-            float _volume = (volume * (1 + 80)) - 80;
+            float _volume;
+            if (volume == 0) _volume = -80;
+            else _volume = Mathf.Log10(volume) * 20;
+            //float _volume = (volume * (1 + 80)) - 80;
+
             audioMixer.SetFloat("SfxVolume", _volume);
             AudioManager.Instance.SFXVolume = _volume;
         }
