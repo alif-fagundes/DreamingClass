@@ -69,7 +69,8 @@ MonoBehaviour:
   m_text: Yes
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1dec05ad0e55340ffbdf31c258106c1d, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -1136970364203113270, guid: 1dec05ad0e55340ffbdf31c258106c1d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -271,7 +272,8 @@ MonoBehaviour:
   m_text: Do you want to start a new game?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1dec05ad0e55340ffbdf31c258106c1d, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -1136970364203113270, guid: 1dec05ad0e55340ffbdf31c258106c1d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -406,7 +408,8 @@ MonoBehaviour:
   m_text: Yes
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1dec05ad0e55340ffbdf31c258106c1d, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -1136970364203113270, guid: 1dec05ad0e55340ffbdf31c258106c1d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -859,13 +862,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 4568284730231024558}
-        m_TargetAssemblyTypeName: PlayAudioSFX, Assembly-CSharp
+        m_TargetAssemblyTypeName: PlayAudioSFX, Project
         m_MethodName: Play
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: d43045c7a4340489fbe5545a142a7e87,
             type: 2}
-          m_ObjectArgumentAssemblyTypeName: AudioSFX, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: AudioSFX, Project
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -939,7 +942,8 @@ MonoBehaviour:
   m_text: Are you sure you want to load?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1dec05ad0e55340ffbdf31c258106c1d, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -1136970364203113270, guid: 1dec05ad0e55340ffbdf31c258106c1d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1074,7 +1078,8 @@ MonoBehaviour:
   m_text: No
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1dec05ad0e55340ffbdf31c258106c1d, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -1136970364203113270, guid: 1dec05ad0e55340ffbdf31c258106c1d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1564,13 +1569,13 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 4568284730231024558}
-        m_TargetAssemblyTypeName: PlayAudioSFX, Assembly-CSharp
+        m_TargetAssemblyTypeName: PlayAudioSFX, Project
         m_MethodName: Play
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: d43045c7a4340489fbe5545a142a7e87,
             type: 2}
-          m_ObjectArgumentAssemblyTypeName: AudioSFX, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: AudioSFX, Project
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1885,6 +1890,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 4568284730231024558}
+        m_TargetAssemblyTypeName: PlayAudioSFX, Project
+        m_MethodName: Play
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: d43045c7a4340489fbe5545a142a7e87,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: AudioSFX, Project
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &1288625842688688372
 GameObject:
   m_ObjectHideFlags: 0
@@ -2066,13 +2084,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4568284730231024558}
-        m_TargetAssemblyTypeName: PlayAudioSFX, Assembly-CSharp
+        m_TargetAssemblyTypeName: PlayAudioSFX, Project
         m_MethodName: Play
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: d43045c7a4340489fbe5545a142a7e87,
             type: 2}
-          m_ObjectArgumentAssemblyTypeName: AudioSFX, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: AudioSFX, Project
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2381,13 +2399,13 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 4568284730231024558}
-        m_TargetAssemblyTypeName: PlayAudioSFX, Assembly-CSharp
+        m_TargetAssemblyTypeName: PlayAudioSFX, Project
         m_MethodName: Play
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: a3a15440cc20b4aa4a5ebe82aaaa4cc0,
             type: 2}
-          m_ObjectArgumentAssemblyTypeName: AudioSFX, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: AudioSFX, Project
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2597,13 +2615,13 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 4568284730231024558}
-        m_TargetAssemblyTypeName: PlayAudioSFX, Assembly-CSharp
+        m_TargetAssemblyTypeName: PlayAudioSFX, Project
         m_MethodName: Play
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: a3a15440cc20b4aa4a5ebe82aaaa4cc0,
             type: 2}
-          m_ObjectArgumentAssemblyTypeName: AudioSFX, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: AudioSFX, Project
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2912,7 +2930,8 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1dec05ad0e55340ffbdf31c258106c1d, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -1136970364203113270, guid: 1dec05ad0e55340ffbdf31c258106c1d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3115,7 +3134,8 @@ MonoBehaviour:
   m_text: No
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1dec05ad0e55340ffbdf31c258106c1d, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -1136970364203113270, guid: 1dec05ad0e55340ffbdf31c258106c1d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3405,8 +3425,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 87dd506878cddb34e971c3598505bfae, type: 2}
-  musicSlider: {fileID: 8509344182154178801}
-  SfxSlider: {fileID: 515878087610662781}
+  BGMvolumeTextValue: {fileID: 0}
+  SFXvolumeTextValue: {fileID: 0}
 --- !u!114 &4568284730231024558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3843,13 +3863,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 4568284730231024558}
-        m_TargetAssemblyTypeName: PlayAudioSFX, Assembly-CSharp
+        m_TargetAssemblyTypeName: PlayAudioSFX, Project
         m_MethodName: Play
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: d43045c7a4340489fbe5545a142a7e87,
             type: 2}
-          m_ObjectArgumentAssemblyTypeName: AudioSFX, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: AudioSFX, Project
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4224,13 +4244,13 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 4568284730231024558}
-        m_TargetAssemblyTypeName: PlayAudioSFX, Assembly-CSharp
+        m_TargetAssemblyTypeName: PlayAudioSFX, Project
         m_MethodName: Play
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: d43045c7a4340489fbe5545a142a7e87,
             type: 2}
-          m_ObjectArgumentAssemblyTypeName: AudioSFX, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: AudioSFX, Project
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4726,13 +4746,13 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 4568284730231024558}
-        m_TargetAssemblyTypeName: PlayAudioSFX, Assembly-CSharp
+        m_TargetAssemblyTypeName: PlayAudioSFX, Project
         m_MethodName: Play
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: d43045c7a4340489fbe5545a142a7e87,
             type: 2}
-          m_ObjectArgumentAssemblyTypeName: AudioSFX, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: AudioSFX, Project
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4940,7 +4960,8 @@ MonoBehaviour:
   m_text: No Save File Found
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1dec05ad0e55340ffbdf31c258106c1d, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -1136970364203113270, guid: 1dec05ad0e55340ffbdf31c258106c1d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5438,13 +5459,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 4568284730231024558}
-        m_TargetAssemblyTypeName: PlayAudioSFX, Assembly-CSharp
+        m_TargetAssemblyTypeName: PlayAudioSFX, Project
         m_MethodName: Play
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: d43045c7a4340489fbe5545a142a7e87,
             type: 2}
-          m_ObjectArgumentAssemblyTypeName: AudioSFX, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: AudioSFX, Project
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5484,7 +5505,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13, y: -83.5}
+  m_AnchoredPosition: {x: 21, y: -83.5}
   m_SizeDelta: {x: 300, y: 83}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &726322124960355356
@@ -6613,13 +6634,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 4568284730231024558}
-        m_TargetAssemblyTypeName: PlayAudioSFX, Assembly-CSharp
+        m_TargetAssemblyTypeName: PlayAudioSFX, Project
         m_MethodName: Play
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: d43045c7a4340489fbe5545a142a7e87,
             type: 2}
-          m_ObjectArgumentAssemblyTypeName: AudioSFX, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: AudioSFX, Project
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6944,13 +6965,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4568284730231024558}
-        m_TargetAssemblyTypeName: PlayAudioSFX, Assembly-CSharp
+        m_TargetAssemblyTypeName: PlayAudioSFX, Project
         m_MethodName: Play
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: d43045c7a4340489fbe5545a142a7e87,
             type: 2}
-          m_ObjectArgumentAssemblyTypeName: AudioSFX, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: AudioSFX, Project
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7235,13 +7256,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 4568284730231024558}
-        m_TargetAssemblyTypeName: PlayAudioSFX, Assembly-CSharp
+        m_TargetAssemblyTypeName: PlayAudioSFX, Project
         m_MethodName: Play
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: d43045c7a4340489fbe5545a142a7e87,
             type: 2}
-          m_ObjectArgumentAssemblyTypeName: AudioSFX, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: AudioSFX, Project
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7694,13 +7715,13 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 4568284730231024558}
-        m_TargetAssemblyTypeName: PlayAudioSFX, Assembly-CSharp
+        m_TargetAssemblyTypeName: PlayAudioSFX, Project
         m_MethodName: Play
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: d43045c7a4340489fbe5545a142a7e87,
             type: 2}
-          m_ObjectArgumentAssemblyTypeName: AudioSFX, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: AudioSFX, Project
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -8470,13 +8491,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 4568284730231024558}
-        m_TargetAssemblyTypeName: PlayAudioSFX, Assembly-CSharp
+        m_TargetAssemblyTypeName: PlayAudioSFX, Project
         m_MethodName: Play
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: d43045c7a4340489fbe5545a142a7e87,
             type: 2}
-          m_ObjectArgumentAssemblyTypeName: AudioSFX, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: AudioSFX, Project
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
