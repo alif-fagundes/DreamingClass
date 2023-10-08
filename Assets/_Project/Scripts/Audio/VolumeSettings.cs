@@ -3,7 +3,13 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 
 
-    public class VolumeSettings : MonoBehaviour
+public class VolumeSettings : MonoBehaviour
+{
+    [SerializeField] AudioMixer audioMixer;
+    [SerializeField] Slider musicSlider;
+    [SerializeField] Slider SfxSlider;
+
+    private void Start()
     {
         [SerializeField] AudioMixer audioMixer;
         [SerializeField] Slider musicSlider;
@@ -59,4 +65,6 @@ using UnityEngine.UI;
         }
 
     }
+
+}
 

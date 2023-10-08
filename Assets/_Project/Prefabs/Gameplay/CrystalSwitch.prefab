@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 6396143121835232599}
   - component: {fileID: 6053212234751646075}
   - component: {fileID: 1134770642551095798}
+  - component: {fileID: 4723797375776833070}
   - component: {fileID: 4913590126569225619}
   m_Layer: 0
   m_Name: CrystalSwitch
@@ -168,8 +169,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.3
-  m_Height: 1.4
+  m_Radius: 0.4
+  m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!95 &6396143121835232599
@@ -259,6 +260,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4723797375776833070}
+        m_TargetAssemblyTypeName: LevelKeyUpdater, Project
+        m_MethodName: EnableKey
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTurnOff:
     m_PersistentCalls:
       m_Calls:
@@ -275,6 +288,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4723797375776833070}
+        m_TargetAssemblyTypeName: LevelKeyUpdater, Project
+        m_MethodName: DisableKey
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4723797375776833070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8413638781640058803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe276d29a4c05494ca50ce19efdf2606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyName: SwitchX
 --- !u!114 &4913590126569225619
 MonoBehaviour:
   m_ObjectHideFlags: 0

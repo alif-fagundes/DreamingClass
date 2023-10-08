@@ -53,9 +53,6 @@ public class PlayerController : BaseController, ICanActivatePressurePlates, IDoD
         ToggleEnabledCallback = ToggleInputs;
 
         _currentHealth = _maxHealth;
-
-        ToggleEnabled(true);
-
     }
 
     public void Update()

@@ -8,7 +8,6 @@ public class AudioManager : MonoBehaviour
 
     [Header("SFX")]
     [SerializeField] AudioSource[] _SFXSources;
-    [SerializeField] AudioSFX _testSFX;
 
     [Space(5)]
     [Header("BMG")]
@@ -20,9 +19,10 @@ public class AudioManager : MonoBehaviour
     [Space(5)]
     [Header("Setup Volumes")]
     public AudioMixer mixer;
-    [Range(-80f, 1f)] public float BGMVolume = 1f;
-    [Range(-80f, 1f)] public float SFXVolume = 1f;
+    [Range(-80f, 2f)] public float BGMVolume = 1f;
+    [Range(-80f, 2f)] public float SFXVolume = 1f;
     [SerializeField] bool _shouldDebug = false;
+    [SerializeField] AudioSFX _testSFX;
 
     Queue<AudioSource> _playedSFXSources = new Queue<AudioSource>();
 
