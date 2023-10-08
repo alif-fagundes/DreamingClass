@@ -85,6 +85,15 @@ public class AudioManager : MonoBehaviour
         PlaySFX(sfx.clips[UnityEngine.Random.Range(0, sfx.clips.Length)], sfx.volume, UnityEngine.Random.Range(sfx.pitchVariation.x, sfx.pitchVariation.y));
     }
 
+    public void PlaySFXWithSpecialSource(AudioSFX sfx, AudioSource source)
+    {
+        source.clip = sfx.clips[UnityEngine.Random.Range(0, sfx.clips.Length)];
+        source.pitch = UnityEngine.Random.Range(sfx.pitchVariation.x, sfx.pitchVariation.y);
+        source.volume = sfx.volume;
+
+        source.Play();
+    }
+
     public void PlayBGM()
     {
         PlayBGM(_availableBGM[0]);
