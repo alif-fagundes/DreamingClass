@@ -200,13 +200,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 7919897782339345264}
-        m_TargetAssemblyTypeName: PlayAudioSFX, Assembly-CSharp
+        m_TargetAssemblyTypeName: PlayAudioSFX, Project
         m_MethodName: Play
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: c1536fef63debd94eaf7fc0937900e27,
             type: 2}
-          m_ObjectArgumentAssemblyTypeName: AudioSFX, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: AudioSFX, Project
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -248,13 +248,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7919897782339345264}
-        m_TargetAssemblyTypeName: PlayAudioSFX, Assembly-CSharp
+        m_TargetAssemblyTypeName: PlayAudioSFX, Project
         m_MethodName: Play
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: 188e874c45abf724cb545fadeb940ea1,
             type: 2}
-          m_ObjectArgumentAssemblyTypeName: AudioSFX, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: AudioSFX, Project
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

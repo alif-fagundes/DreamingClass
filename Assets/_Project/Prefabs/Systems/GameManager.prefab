@@ -149,8 +149,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainMenuScene: MainMenu
   Levels:
-  - SampleSceneForTesting
-  - SampleSceneForTesting
+  - Level1
+  - Level2
   CurrentLevel: 0
   OnLevelLoadingStarts:
     m_PersistentCalls:

@@ -315,6 +315,7 @@ GameObject:
   - component: {fileID: 5574925736856747720}
   - component: {fileID: 8164995905961556244}
   - component: {fileID: 4951347509233334029}
+  - component: {fileID: 6530725022170711264}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -431,8 +432,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerInput: {fileID: 9184964336687293523}
   Move: {x: 0, y: 0}
-  Interact: 0
   Attack: 0
+  Pause: 0
   cursorLocked: 0
 --- !u!114 &5552578154838319015
 MonoBehaviour:
@@ -552,6 +553,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sfx: {fileID: 0}
+  _source: {fileID: 0}
+  _shouldUseOwnSource: 0
+--- !u!81 &6530725022170711264
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7331185641756489011}
+  m_Enabled: 1
 --- !u!1 &8129798546521339527
 GameObject:
   m_ObjectHideFlags: 0
