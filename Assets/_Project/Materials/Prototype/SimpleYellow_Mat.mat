@@ -25,9 +25,9 @@ Material:
   m_Parent: {fileID: 2100000, guid: 0bac177a9b71e46f9bf420ebebfc28bf, type: 2}
   m_ModifiedSerializedProperties: 2
   m_ValidKeywords:
-  - _SPECULAR_SETUP
+  - _EMISSION
   m_InvalidKeywords: []
-  m_LightmapFlags: 6
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -39,8 +39,12 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _Metallic: 0.852
+    - _Smoothness: 0.409
+    - _WorkflowMode: 1
     m_Colors:
-    - _BaseColor: {r: 1, g: 0.8358231, b: 0.2971698, a: 1}
-    - _Color: {r: 1, g: 0.8358231, b: 0.29716977, a: 1}
+    - _BaseColor: {r: 0.8301887, g: 0.667555, b: 0.13705944, a: 1}
+    - _Color: {r: 0.8301887, g: 0.667555, b: 0.13705939, a: 1}
+    - _EmissionColor: {r: 0.2830189, g: 0.17292829, b: 0.057404775, a: 1}
   m_BuildTextureStacks: []
