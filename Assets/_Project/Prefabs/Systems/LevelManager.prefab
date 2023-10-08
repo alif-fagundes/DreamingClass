@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1938949560203299568}
   - component: {fileID: 8788993223752173276}
+  - component: {fileID: 3414616114360611171}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -44,3 +45,85 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c740df94aacda34cab9a74ff3728077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _startLevelOnAwake: 1
+  LevelKeys: []
+  OnLevelStarts:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3414616114360611171}
+        m_TargetAssemblyTypeName: PlayAudioSFX, Project
+        m_MethodName: Play
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 6384f6987c421c44998d7284e2ab0f5f,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: AudioSFX, Project
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnLevelCompleted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3414616114360611171}
+        m_TargetAssemblyTypeName: PlayAudioSFX, Project
+        m_MethodName: Play
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: f000ae816d7dec345a581070885ca6e9,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: AudioSFX, Project
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnLevelFailed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3414616114360611171}
+        m_TargetAssemblyTypeName: PlayAudioSFX, Project
+        m_MethodName: Play
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: c5643fe1b4049ae419201f41e015169a,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: AudioSFX, Project
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnLevelStateUpdated:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3414616114360611171}
+        m_TargetAssemblyTypeName: PlayAudioSFX, Project
+        m_MethodName: Play
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 01df546a16ece904b84b50f23b186283,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: AudioSFX, Project
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnLevelKeysUpdated:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &3414616114360611171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4151099348389813603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03fcd238ee08e19479b403129b76e855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfx: {fileID: 0}

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24a70baf34a8fba4fa30e3ccf5a3cb87, type: 3}
-  m_Name: Dragon Roar
+  m_Name: Dragon Roar_SFX
   m_EditorClassIdentifier: 
   clips:
   - {fileID: 8300000, guid: 0b45baa42aaae4799ba51d6809d38d46, type: 3}

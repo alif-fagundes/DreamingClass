@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24a70baf34a8fba4fa30e3ccf5a3cb87, type: 3}
-  m_Name: Dialogue_SFX
+  m_Name: GameOver_SFX
   m_EditorClassIdentifier: 
-  clip: {fileID: 0}
-  volume: 0
-  pitchVariation: {x: 0, y: 0}
+  clips:
+  - {fileID: 8300000, guid: daf4d173291645f42b12c0fce6daf5cf, type: 3}
+  volume: 0.9
+  pitchVariation: {x: 1, y: 1}

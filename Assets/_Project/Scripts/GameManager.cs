@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     public UnityEvent OnLevelLoadingStarts;
     public UnityEvent OnLevelLoadingFinish;
 
+    public const string  LAST_LEVEL_SAVE_KEY = "LAST_LEVEL";
+
     private void Awake()
     {
         if (Instance == null)
@@ -31,9 +33,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void LoadGame(string SavedData)
+    public void LoadGameSavedLevel()
     {
-        // TODO
+        var loaded = PlayerPrefs.GetInt(LAST_LEVEL_SAVE_KEY, 0);
+        CurrentLevel = loaded;
+        StartCoroutine(LoadSceneAsync(Levels[CurrentLevel]));
+    }
+
+    public void SaveGame()
+    {
+        PlayerPrefs.SetInt(LAST_LEVEL_SAVE_KEY, CurrentLevel);
     }
 
     public void LoadMainMenu()
@@ -51,6 +60,11 @@ public class GameManager : MonoBehaviour
     public void LoadNextLevel()
     {
         CurrentLevel++;
+        StartCoroutine(LoadSceneAsync(Levels[CurrentLevel]));
+    }
+
+    public void RestartLevel()
+    {
         StartCoroutine(LoadSceneAsync(Levels[CurrentLevel]));
     }
 

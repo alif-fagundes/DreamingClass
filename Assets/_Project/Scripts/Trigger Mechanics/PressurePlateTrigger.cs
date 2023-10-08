@@ -26,11 +26,9 @@ public class PressurePlateTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log($"{other.gameObject.name}");
+        //Debug.Log($"{other.gameObject.name}");
         if(other.gameObject.TryGetComponent(out ICanActivatePressurePlates obj))
         {
-            Debug.Log($"has interface");
-
             if (!_objectsPressing.Contains(obj))
             {
                 _objectsPressing.Add(obj);

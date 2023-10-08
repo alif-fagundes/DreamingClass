@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24a70baf34a8fba4fa30e3ccf5a3cb87, type: 3}
-  m_Name: ClickStart
+  m_Name: Chicken_SFX
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: 8b57ef33df3c24e33bc59a98a49846fb, type: 3}
-  volume: 1
-  pitchVariation: {x: 1, y: 1}
+  - {fileID: 8300000, guid: 22cc61d59ad9744da84b0bf8441133e1, type: 3}
+  - {fileID: 8300000, guid: 3338db3191cb2474882757fd771700b4, type: 3}
+  volume: 0.8
+  pitchVariation: {x: 1, y: 1.1}

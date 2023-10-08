@@ -36,6 +36,7 @@ public class PlayerController : BaseController, ICanActivatePressurePlates, IDoD
     private Coroutine _attackCooldownCoroutine;
 
     private int _currentHealth;
+    private Camera _mainCam;
 
     public void Awake()
     {
@@ -47,6 +48,7 @@ public class PlayerController : BaseController, ICanActivatePressurePlates, IDoD
         _input = GetComponent<InputManager>();
         _characterController = GetComponent<CharacterController>();
         _animator = GetComponent<Animator>();
+        _mainCam = Camera.main;
 
         ToggleEnabledCallback = ToggleInputs;
 
@@ -86,6 +88,21 @@ public class PlayerController : BaseController, ICanActivatePressurePlates, IDoD
         }
         else
         {
+            // Get the camera's forward and right vectors.
+            Vector3 cameraForward = _mainCam.transform.forward;
+            Vector3 cameraRight = _mainCam.transform.right;
+
+            // Ignore the y-axis to ensure movement stays on the ground.
+            cameraForward.y = 0;
+            cameraRight.y = 0;
+
+            // Normalize vectors to prevent faster diagonal movement.
+            cameraForward.Normalize();
+            cameraRight.Normalize();
+
+            // Get the input direction based on camera orientation.
+            inputDirection = cameraForward * verticalInput + cameraRight * horizontalInput;
+
             transform.forward = (transform.position + inputDirection) - transform.position;
             _characterController.SimpleMove(inputDirection * _moveSpeed);
         }
@@ -147,7 +164,5 @@ public class PlayerController : BaseController, ICanActivatePressurePlates, IDoD
         ToggleEnabled(false);
         IsDead = true;
         OnDeath?.Invoke();
-
-        Debug.Log("GAME OVER!!!!!!!!");
     }
 }

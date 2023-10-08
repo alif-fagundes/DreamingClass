@@ -22,9 +22,9 @@ public class MenuController : MonoBehaviour
 
     public void LaodGameDialogYes()
     {
-        if (PlayerPrefs.HasKey("SavedLevel"))
+        if (PlayerPrefs.HasKey(GameManager.LAST_LEVEL_SAVE_KEY))
         {
-            GameManager.Instance.LoadGame(PlayerPrefs.GetString("SavedLevel"));
+            GameManager.Instance.LoadGameSavedLevel();
         }
         else
         {
