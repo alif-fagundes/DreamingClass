@@ -1109,8 +1109,8 @@ MonoBehaviour:
     loop: 1
     volume: 0.8
   mixer: {fileID: 24100000, guid: 87dd506878cddb34e971c3598505bfae, type: 2}
-  BGMVolume: 1
-  SFXVolume: 1
+  BGMVolume: 0.8
+  SFXVolume: 0.8
   _shouldDebug: 0
 --- !u!82 &3781022983886400024
 AudioSource:

@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
@@ -12,26 +10,21 @@ public class MenuController : MonoBehaviour
     [SerializeField] Slider BGMvolumeSlider = null;
     [SerializeField] TMP_Text SFXvolumeTextValue = null;
     [SerializeField] Slider SFXvolumeSlider = null;
-    [SerializeField] float defaultVolume = 0.5f;
+    [SerializeField] float defaultVolume = 0.7f;
     [SerializeField] VolumeSettings volumeSettings = null;
     [SerializeField] GameObject confirmationPrompt = null;
-
-    [Header("Levels To Laod")]
-    public string _newGameLevel;
-    private string levelToLoad;
     [SerializeField] GameObject noSavedGameDialog = null;
 
     public void NewGameDialogYes()
     {
-        SceneManager.LoadScene(_newGameLevel);
+        GameManager.Instance.LoadNewGame();
     }
 
     public void LaodGameDialogYes()
     {
         if (PlayerPrefs.HasKey("SavedLevel"))
         {
-            levelToLoad = PlayerPrefs.GetString("SavedLevel");
-            SceneManager.LoadScene(levelToLoad);
+            GameManager.Instance.LoadGame(PlayerPrefs.GetString("SavedLevel"));
         }
         else
         {

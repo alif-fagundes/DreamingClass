@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6823414018665727283}
   - component: {fileID: 2276314625450370212}
   m_Layer: 0
-  m_Name: BallistaeProjectileParticles
+  m_Name: BallistaProjectileParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
