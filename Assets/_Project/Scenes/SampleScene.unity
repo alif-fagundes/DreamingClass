@@ -3618,6 +3618,72 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5552578154838319015, guid: 863a917f52b12924191f98ce8094bcb9,
+        type: 3}
+      propertyPath: OnAttack.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5552578154838319015, guid: 863a917f52b12924191f98ce8094bcb9,
+        type: 3}
+      propertyPath: OnAttack.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5552578154838319015, guid: 863a917f52b12924191f98ce8094bcb9,
+        type: 3}
+      propertyPath: OnAttack.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6218185749675200329}
+    - target: {fileID: 5552578154838319015, guid: 863a917f52b12924191f98ce8094bcb9,
+        type: 3}
+      propertyPath: OnAttack.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 6218185749675200329}
+    - target: {fileID: 5552578154838319015, guid: 863a917f52b12924191f98ce8094bcb9,
+        type: 3}
+      propertyPath: OnAttack.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5552578154838319015, guid: 863a917f52b12924191f98ce8094bcb9,
+        type: 3}
+      propertyPath: OnAttack.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 5552578154838319015, guid: 863a917f52b12924191f98ce8094bcb9,
+        type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayAudioSFX, Project
+      objectReference: {fileID: 0}
+    - target: {fileID: 5552578154838319015, guid: 863a917f52b12924191f98ce8094bcb9,
+        type: 3}
+      propertyPath: OnAttack.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayAudioSFX, Project
+      objectReference: {fileID: 0}
+    - target: {fileID: 5552578154838319015, guid: 863a917f52b12924191f98ce8094bcb9,
+        type: 3}
+      propertyPath: OnAttack.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PlayAudioSFX, Project
+      objectReference: {fileID: 0}
+    - target: {fileID: 5552578154838319015, guid: 863a917f52b12924191f98ce8094bcb9,
+        type: 3}
+      propertyPath: OnAttack.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: e4c8086ba4b366c4fa0d242e0c95c6be,
+        type: 2}
+    - target: {fileID: 5552578154838319015, guid: 863a917f52b12924191f98ce8094bcb9,
+        type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: AudioSFX, Project
+      objectReference: {fileID: 0}
+    - target: {fileID: 5552578154838319015, guid: 863a917f52b12924191f98ce8094bcb9,
+        type: 3}
+      propertyPath: OnAttack.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: AudioSFX, Project
+      objectReference: {fileID: 0}
+    - target: {fileID: 5552578154838319015, guid: 863a917f52b12924191f98ce8094bcb9,
+        type: 3}
+      propertyPath: OnAttack.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: AudioSFX, Project
+      objectReference: {fileID: 0}
     - target: {fileID: 7331185641756489011, guid: 863a917f52b12924191f98ce8094bcb9,
         type: 3}
       propertyPath: m_Name
@@ -3738,6 +3804,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5094565456325169854}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6218185749675200329 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4951347509233334029, guid: 863a917f52b12924191f98ce8094bcb9,
+    type: 3}
+  m_PrefabInstance: {fileID: 5094565456325169854}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03fcd238ee08e19479b403129b76e855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6557482573869776641
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4112,8 +4190,48 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4030914877777057381, guid: 2429f3c78d98d6b49882fa124dfc8e5c,
         type: 3}
+      propertyPath: _playOnStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030914877777057381, guid: 2429f3c78d98d6b49882fa124dfc8e5c,
+        type: 3}
       propertyPath: _shouldDebug
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030914877777057381, guid: 2429f3c78d98d6b49882fa124dfc8e5c,
+        type: 3}
+      propertyPath: _availableBGM.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030914877777057381, guid: 2429f3c78d98d6b49882fa124dfc8e5c,
+        type: 3}
+      propertyPath: _availableBGM.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: b5b3a955ec1ad4245ac215d636d5b806, type: 3}
+    - target: {fileID: 4030914877777057381, guid: 2429f3c78d98d6b49882fa124dfc8e5c,
+        type: 3}
+      propertyPath: _availableBGM.Array.data[0].name
+      value: gameplay
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030914877777057381, guid: 2429f3c78d98d6b49882fa124dfc8e5c,
+        type: 3}
+      propertyPath: _availableBGM.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 75d0b62eed2a84bef83e499599946585, type: 3}
+    - target: {fileID: 4030914877777057381, guid: 2429f3c78d98d6b49882fa124dfc8e5c,
+        type: 3}
+      propertyPath: _availableBGM.Array.data[1].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030914877777057381, guid: 2429f3c78d98d6b49882fa124dfc8e5c,
+        type: 3}
+      propertyPath: _availableBGM.Array.data[1].name
+      value: mainmenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030914877777057381, guid: 2429f3c78d98d6b49882fa124dfc8e5c,
+        type: 3}
+      propertyPath: _availableBGM.Array.data[1].volume
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 5607144301736518902, guid: 2429f3c78d98d6b49882fa124dfc8e5c,
         type: 3}

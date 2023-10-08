@@ -9,11 +9,13 @@ using UnityEngine.UI;
         [SerializeField] Slider musicSlider;
         [SerializeField] Slider SfxSlider;
 
+        /*
         private void Start()
         {
             GetMusicVolume();
             GetSfxVolume();
         }
+        */
 
         public void SetMusicVolume(float volume)
         {
